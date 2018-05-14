@@ -13,7 +13,7 @@ const image = require('./Controllers/image');
 const db = knex({
   client: 'pg',
   connection: {
-    connectionString : process.env.DATABASE_URL,
+    connectionStringChN : process.env.DATABASE_URL,
     ssl: true,
   }
 });
@@ -21,7 +21,7 @@ const db = knex({
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req, res) => {res.send(database.users);})
+app.get('/', (req, res) => {res.send('It is working')})
 
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt)})
 
